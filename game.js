@@ -1,6 +1,7 @@
-userScore = 0;
-computerScore = 0;
-userchoice = "r";
+var userScore = 0;
+var computerScore = 0;
+var userchoice = "r";
+var userName = "Nemo";
 const userScore_span = document.getElementById("user_score");
 const computerScore_span = document.getElementById("comp_score");
 const scoreBoard_div = document.querySelector(".score_board");
@@ -8,27 +9,30 @@ const result_div =document.querySelector(".result");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
-
+const user_div = document.getElementById("user_label")
+const banner_div= document.getElementById("banner")
 
 function main() {
-rock_div.addEventListener("click", function() {
-    console.log("Rock button");
-    userChoice="r";
-    game(userChoice);
-})
-paper_div.addEventListener("click", function() {
-    console.log("Paper button");
-    userChoice="p";
-    game(userChoice);
-})
-scissors_div.addEventListener("click", function() {
-    console.log("Scissors button");
-    userChoice="s";
-    game(userChoice);
-})
+    var userName = document.getElementById("name").value;
+    user_div.innerHTML=userName;
+    console.log(userName); 
+    document.getElementById("user_info").style.visibility = "hidden";
+    rock_div.addEventListener("click", function() {
+        console.log("Rock button");
+        userChoice="r";
+        game(userChoice,userName);
+    })
+    paper_div.addEventListener("click", function() {
+        console.log("Paper button");
+        userChoice="p";
+        game(userChoice,userName);
+    })
+    scissors_div.addEventListener("click", function() {
+        console.log("Scissors button");
+        userChoice="s";
+        game(userChoice,userName);
+    })
 }
-
-main();
 
 function getComputerChoice() {
     const choices=["r","p","s"];
@@ -75,7 +79,18 @@ function draw(user,computer) {
     setTimeout(function(){document.getElementById(userChoice).classList.remove("grayGlow")},300);
 
 }
-function game(userChoice) {
+function leader(userName) {
+    if(userScore==computerScore){
+        banner_div.innerHTML="Both are head to head!!!";
+    }
+    if(userScore>computerScore){
+        banner_div.innerHTML=userName+" leads the Game!!! Congratulations";
+    }
+    if(userScore<computerScore){
+        banner_div.innerHTML="The Computer leads the Game!!! Try Harder";
+    }
+}
+function game(userChoice,userName) {
     const computerChoice = getComputerChoice();
     switch(userChoice + computerChoice) {
         case "rs":
@@ -97,5 +112,6 @@ function game(userChoice) {
             draw(userChoice,computerChoice);
             break;
     }
+    leader(userName);
 }
 
