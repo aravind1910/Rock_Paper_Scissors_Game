@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 header {
-    background: cornsilk;
+    background-image : url("https://miro.medium.com/max/1057/1*6fYMSdQH1RJdSOhPBeLiAw.png") ;
+    background-color : cornsilk;
     padding: 30px;
 }
 header > h1 {
+    background-color: white;
+    margin-right: 400px;
+    margin-left: 400px;
+    border-radius: 10px;
     color: #24272E;
+    border: 2px solid black;
     text-align: center;
     font-weight: bold;
     font-size: 50px;
@@ -16,6 +22,28 @@ header > h1 {
 }
 body {
     background-color: #24272E;
+}
+#user_info {
+    background-color: white;
+    margin-right: 400px;
+    margin-left: 400px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-size: medium;
+    color: black;
+    padding: 10px;
+}
+#banner {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 400px;
+    margin-left: 400px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: gray;
+    padding: 10px;
+
 }
 .score_board {
     border: 3px solid white;
@@ -40,13 +68,13 @@ body {
 #user_label {
     position: absolute;
     top: 35px;
-    left: -20px ;
+    left: -40px ;
 }
 
 #comp_label {
     position: absolute;
     top: 35px;
-    right: -20px ;
+    right: -40px ;
 }
 
 .result {
@@ -103,7 +131,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: mintcream;
     text-decoration-style: wavy;
-    text-align: center;
+    text-align: right;
     position:absolute;
     bottom:0px;
     right:0px;
@@ -125,3 +153,13 @@ body {
     border: 5px solid gray;
     box-shadow:100px grey;
 }
+
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  .button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
