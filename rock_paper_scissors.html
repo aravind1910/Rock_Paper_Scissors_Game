@@ -4,9 +4,17 @@
     <title>
         Rock Paper Scissors Game
     </title>
+    <link rel="stylesheet" href="C:\Users\Arvind\Desktop\rock\stylesgame.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+        <form  id="user_info" onSubmit = "main(); return false" >
+            Enter your name please :  <input type="text" id="name" >
+            <input class="button" type="submit">
+        </form>
+        <h2 id="banner">Let the Game Begin!!!</h2>
+    </header>
     <div class="score_board">
         <div id="comp_label" class="badge" > Comp</div>
         <div id="user_label" class="badge" > User</div>
@@ -16,9 +24,21 @@
         Paper covers Rock. You WIN!!!
     </div>
     <div class="choices">
-        <div class="choice">
-            <img src="" 
+        <div class="choice" id="r">
+            <img src="C:\Users\Arvind\Desktop\rock\ClenchedFist.svg" >
+            <div class="icon_label">Rock</div>
         </div>
-
+        
+        <div class="choice" id="p">
+            <img src="C:\Users\Arvind\Desktop\rock\Hand.svg">
+            <div class="icon_label">Paper</div>
+        </div>
+        <div class="choice" id="s">
+            <img src="C:\Users\Arvind\Desktop\rock\HandScissors.svg">
+            <div class="icon_label">Scissors</div>
+        </div>
+        <p id="action_message">Make Your Move</p>
     </div>
+    <p class="footnote">Created by Aravind Chintalapudi ✌</p>
+    <script src="C:\Users\Arvind\Desktop\rock\game.js" charset="utf-8"></script>
 </body>
